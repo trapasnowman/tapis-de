@@ -1,8 +1,11 @@
 package org.fkit.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
 import org.fkit.domain.User;
 import org.fkit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,7 +71,7 @@ public class UserController {
 	
 	/**
 	 * 处理updatepassword请求
-	 * @param username
+	 * @param loginname
 	 * @param password
 	 * @param mv
 	 * @return
@@ -82,6 +85,55 @@ public class UserController {
 				return "loginForm";
 			}
 
-	
+	/**
+	 * 处理forgetpwd请求		
+	 * @param loginname
+	 * @param email
+	 * @param mv
+	 * @param session
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/forgetpwd_")
+	 public ModelAndView find(String loginname,String email,ModelAndView mv,HttpSession session,HttpServletResponse response) throws Exception{		
+		User user=userService.forgetpwd(loginname, email);
+		System.out.println("1");
+		if(user!=null){
+			StringBuffer url=new StringBuffer();
+			StringBuilder builder=new StringBuilder();
+			builder.append("");
+			url.append("您的密码是："+user.getPassword()+"");
+			builder.append("");
+			builder.append(""+url+"");
+			builder.append("");
+			SimpleEmail sendemail=new SimpleEmail();
+			sendemail.setHostName("smtp.163.com");
+			sendemail.setAuthentication("trapasnowman@163.com","wyh098");
+			sendemail.setCharset("UTF-8");
+			
+			try{
+				sendemail.setCharset("UTF-8");
+				sendemail.addTo(email);
+				sendemail.setFrom("trapasnowman@163.com");
+				sendemail.setSubject("找回密码");
+				sendemail.setMsg(builder.toString());
+				sendemail.send();
+				//System.out.println("123");
+			}catch(EmailException e){
+				e.printStackTrace();
+				System.out.print("抛出异常");
+			}
+			
+
+			mv.setViewName("loginForm");
+		
+		}else{
+			
+			response.getWriter().println("密码获取失败");
+			
+		}	
+		return mv;
+	}
 	
 }

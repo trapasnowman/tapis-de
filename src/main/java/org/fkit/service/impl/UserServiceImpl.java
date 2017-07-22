@@ -50,4 +50,15 @@ public class UserServiceImpl implements UserService {
 	public void updatePassword(User user) {
 		userMapper.updatePassword(user);
 	}
+	
+	/**
+	 * UserServiceImpl接口forgetpwd方法实现
+	 * @see { UserService }
+	 * */
+	@Transactional(readOnly=true)
+	@Override
+	public User forgetpwd(String loginname, String email) {
+		return userMapper.findWithLoginnameAndEmail(loginname, email);
+	}	
+	
 }

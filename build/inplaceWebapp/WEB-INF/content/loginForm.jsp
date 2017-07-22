@@ -26,9 +26,7 @@
 		</div>
 	</div>
 </div>
-
-<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
-<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#000000">
+<div class="headfont">
 <h1>Tapis De Fleurs 繁花似锦</h1>
 </div>
 </body>

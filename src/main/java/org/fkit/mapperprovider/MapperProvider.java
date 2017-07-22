@@ -14,8 +14,8 @@ public class MapperProvider {
 						FROM("user");
 						if(params.get("user") != null){
 							User user = (User)params.get("user");
-							if(user.getUsername() != null && !user.getUsername().equals("")){
-								WHERE(" username LIKE CONCAT ('%',#{user.username},'%') ");
+							if(user.getLoginname() != null && !user.getLoginname().equals("")){
+								WHERE(" loginname LIKE CONCAT ('%',#{user.loginname},'%') ");
 							}
 						}
 					}
@@ -34,8 +34,8 @@ public class MapperProvider {
 						if(user.getPassword() != null && !user.getPassword().equals("")){
 							VALUES("password", "#{password}");
 						}
-						if(user.getUsername() != null && !user.getUsername().equals("")){
-							VALUES("username", "#{username}");
+						if(user.getEmail() != null && !user.getEmail().equals("")){
+							VALUES("email", "#{email}");
 						}
 						if(user.getPhone() != null && !user.getPhone().equals("")){
 							VALUES("phone", "#{phone}");
@@ -58,8 +58,8 @@ public class MapperProvider {
 							if(user.getPassword()!= null){
 								SET(" password = #{password} ");
 							}
-							if(user.getUsername() != null){
-								SET(" username = #{username} ");
+							if(user.getEmail() != null){
+								SET(" email = #{email} ");
 							}
 							if(user.getPhone() != null){
 								SET(" phone = #{phone} ");

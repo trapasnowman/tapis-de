@@ -33,5 +33,15 @@ public interface UserMapper {
 	 */
 	@Update("update user set password=#{password} where loginname=#{loginname}")
 	void updatePassword(User user);	
+	
+	/*
+	* 忘记密码
+	 */
+	@Select("select * from user where loginname = #{loginname} and email = #{email}")
+		User findWithLoginnameAndEmail(@Param("loginname")String loginname,
+	@Param("email") String email);	
+	
 }
+
+
 

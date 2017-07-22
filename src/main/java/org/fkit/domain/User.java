@@ -5,9 +5,9 @@ import java.io.Serializable;
 /**
  * CREATE TABLE user(
 id INT PRIMARY KEY AUTO_INCREMENT,      #id
-loginname VARCHAR(20) UNIQUE,		#登录名 邮箱
+loginname VARCHAR(20) UNIQUE,		#登录名
 password VARCHAR(20),			#密码
-username VARCHAR(18),			#用户名
+email VARCHAR(18),			#邮箱
 phone VARCHAR(18),			#电话
 address VARCHAR(255)			#地址
 );
@@ -17,7 +17,7 @@ public class User implements Serializable{
 	private Integer id;			// id
 	private String loginname;	// 登录名
 	private String password;	// 密码
-	private String username;	// 用户名
+	private String email;	// 邮箱
 	private String phone;		// 电话
 	private String address;		// 地址
 	
@@ -43,11 +43,11 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getUsername() {
-		return username;
+	public String getEmail() {
+		return email;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getPhone() {
 		return phone;
@@ -64,9 +64,10 @@ public class User implements Serializable{
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", loginname=" + loginname + ", password="
-				+ password + ", username=" + username + ", phone=" + phone
+				+ password + ", email=" + email + ", phone=" + phone
 				+ ", address=" + address + "]";
 	}
+
 	
 	
 }

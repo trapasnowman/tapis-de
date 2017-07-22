@@ -204,3 +204,9 @@ form button:hover {
             transform: translateY(-700px) rotate(600deg);
   }
 }
+.headfont{
+	text-align:center;
+	margin:50px 0; 
+	font:normal 14px/24px 'MicroSoft YaHei';
+	color:#000000;
+}

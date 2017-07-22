@@ -25,4 +25,9 @@ public interface UserService {
 	 * 用户更新密码
 	 */
 	void updatePassword(User user);
+	
+	/**
+	* 用户忘记密码
+	 */
+	User forgetpwd(String loginname,String email);
 }

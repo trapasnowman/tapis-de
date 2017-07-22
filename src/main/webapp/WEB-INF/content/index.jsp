@@ -23,7 +23,7 @@
                         <div class="tm-logo-div text-xs-center">
                             <img src="image/flower-logo.png" alt="Logo">
                             <h1 class="tm-site-name">tapis de fleurs</h1>
-                            <p>${sessionScope.user.username }，欢迎你！当前在线人数：<%out.println(application.getAttribute("count")); %></p>
+                            <p>${sessionScope.user.loginname }，欢迎你！当前在线人数：${applicationScope.count}</p>
                         </div>
                         <nav class="tm-main-nav">
                             <ul class="tm-main-nav-ul">
