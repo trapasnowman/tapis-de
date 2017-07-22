@@ -30,9 +30,9 @@ public class GoodController {
 	 * */
 	@RequestMapping(value="/fresh")
 	 public String fresh(Model model){
-		// 获得所有图书集合
+		// 获得所有鲜花集合
 		List<Good> good_list = goodService.getAllfresh();
-		// 将图书集合添加到model当中
+		// 将鲜花集合添加到model当中
 		model.addAttribute("good_list", good_list);
 		// 跳转到fresh页面
 		return "fresh";
@@ -43,11 +43,11 @@ public class GoodController {
 	 * */
 	@RequestMapping(value="/dried")
 	 public String dried(Model model){
-		// 获得所有图书集合
+		// 获得所有干花集合
 		List<Good> good_list = goodService.getAlldried();
-		// 将图书集合添加到model当中
+		// 将干花集合添加到model当中
 		model.addAttribute("good_list", good_list);
-		// 跳转到fresh页面
+		// 跳转到dried页面
 		return "dried";
 	}
 	
@@ -56,9 +56,9 @@ public class GoodController {
 	 * */
 	@RequestMapping(value="/food")
 	 public String food(Model model){
-		// 获得所有图书集合
+		// 获得所有美食集合
 		List<Good> good_list = goodService.getAllfood();
-		// 将图书集合添加到model当中
+		// 将美食集合添加到model当中
 		model.addAttribute("good_list", good_list);
 		// 跳转到food页面
 		return "food";
@@ -67,7 +67,7 @@ public class GoodController {
 	/**
 	 * 处理/detail
 	 */
-	@RequestMapping(value="/good_detail")
+	@RequestMapping(value="/detail_good")
 	public ModelAndView detail(@RequestParam("good_sn") Integer good_sn, Model model,ModelAndView mv){
 		Good good = goodService.getGoodDetail(good_sn);
 		mv.addObject("good",good);

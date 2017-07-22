@@ -69,7 +69,7 @@
 				  	  			<div class="top_box">
 					  				<h3 class="m_1">${good.good_name}</h3>
 					  				<p class="m_2">${good.material }</p>
-									<a href="detail?good_sn=${good.good_sn }">
+									<a href="detail_good?good_sn=${good.good_sn }">
 						   			<div class="css3"><img src="image/${good.picture }" alt=""></div></a>
                        				<div class="price">¥ ${good.price }</div>
 					   			</div>

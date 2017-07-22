@@ -53,7 +53,7 @@
 			   	 <ul class="breadcrumbs">
 					<li>首页</li>&nbsp;<span>&gt;</span>
 					<li>商品</li>&nbsp;<span>&gt;</span>
-					<li>详情</a></li>
+					<li>${good.good_name }</a></li>
                  </ul>
                 <ul class="previous">
                 	<li><a href="index">返回首页</a></li>
@@ -92,32 +92,26 @@
 							<h3>${good.good_name }</h3>
 							<p>¥ ${good.price }<a href="#">有一个超链接</a></p>
 							<div class="det_nav">
+								<h4>描述:${good.material }</h4>
+								<h4>包装 :${good.packing }</h4>
+							</div>
+							<div class="btn_form">
+								<a href="cartForm">加入购物车</a><a href="cartForm">加入收藏</a>
+							</div>							
+							<div class="det_nav">
 								<h4>看看其他 :</h4>
 								<ul>
 									<li><a href="fresh"><img src="image/tapis-03.jpg" class="img-responsive" alt=""/></a></li>
 									<li><a href="dried"><img src="image/tapis-2021.jpg" class="img-responsive" alt=""/></a></li>
 									<li><a href="food"><img src="image/tapis-11.jpg" class="img-responsive" alt=""/></a></li>
 								</ul>
-							</div>
-							<div class="filter-by-color">
-							<h3>Filter by Color</h3>
-							<ul class="w_nav2">
-								<li><a class="color1" href="#"></a></li>
-								<li><a class="color2" href="#"></a></li>
-								<li><a class="color3" href="#"></a></li>
-								<li><a class="color4" href="#"></a></li>
-								<li><a class="color5" href="#"></a></li>
-							</ul>
-							</div>
-							<div class="btn_form">
-								<a href="single.html">立即购买</a>
-							</div>
-							<a href="#"><span>又有一个超链接 </span></a>	
+							</div>							
 						</div>
 						<div class="clearfix"></div>
 					</div>
 					<div class="single-bottom1">
 					<h6>商品详情</h6>
+					<p class="prod-desc">${good.details }</p>
 					<p class="prod-desc">${good.material }</p>
 					<p class="prod-desc">${good.packing }</p>
 					</div>
