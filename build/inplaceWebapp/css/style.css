@@ -20,11 +20,11 @@ a:focus {
 .tm-left-right-container { width: 100%; }
 
 .tm-blue-bg {
-	background-color: #006599;
+	background-color: #50a3a2;
 	color: white;
 }
 
-.tm-blue-text {	color: #006599; }
+.tm-blue-text {	color: #50a3a2; }
 .tm-blue-bg a {	color: white; }
 
 .tm-site-name {
@@ -53,7 +53,7 @@ a:focus {
 p { line-height: 2; }
 
 .tm-button {
-	background-color: #006599;
+	background-color: #50a3a2;
 	border: none;
 	color: white;
 	cursor: pointer;
@@ -114,7 +114,7 @@ p { line-height: 2; }
 .tm-contact-right { margin-top: 40px; }
 
 .form-control {
-	border-color: #0a6697;
+	border-color: #50a3a2;
 	border-radius: 0;
 	color: #4286ab;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;

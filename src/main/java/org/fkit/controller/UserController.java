@@ -1,5 +1,6 @@
 package org.fkit.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.fkit.domain.User;
@@ -7,8 +8,10 @@ import org.fkit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -62,6 +65,23 @@ public class UserController {
 			mv.setViewName("loginForm");
 				return mv;
 			}
+	
+	/**
+	 * 处理updatepassword请求
+	 * @param username
+	 * @param password
+	 * @param mv
+	 * @return
+	 */
+	@RequestMapping(value="/updatepassword")
+	 public String updatepsaaword(@RequestParam("loginname") String loginname,
+			HttpServletRequest request,
+			Model model,
+			@ModelAttribute User user){
+				userService.updatePassword(user);
+				return "loginForm";
+			}
+
 	
 	
 }

@@ -11,9 +11,6 @@
 <script src="js/jquery.mins.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style1.css" rel="stylesheet" type="text/css" media="all" />
-<!--webfont-->
-<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-<link href='http://fonts.useso.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <!-- header-section-starts -->
@@ -38,6 +35,7 @@
 							<li><a href="dried">干花</a></li>
 							<li><a href="food">美食</a></li>
 							<li><a href="cartForm">购物车</a></li>
+							<li><a href="changepwd">修改密码</a></li>
 						</ul>						
 					</div>
 				</div>

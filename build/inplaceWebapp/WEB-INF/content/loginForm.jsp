@@ -17,10 +17,12 @@
 			<form class="form" action="login" method="post">
 				<input type="text" placeholder="用户名" name=loginname>
 				<input type="password" placeholder="密码" name=password>
-				<button type="submit" id="login-button">登录</button><br/><br/>
-				<a href="registeForm"><button type="button" id="register-button">注册</button></a>
+				<button type="submit" id="login-button">登录</button>
 			</form>
-			
+				<a href="forgetpwd">忘记密码</a>&nbsp&nbsp<input type="checkbox" value="记住密码">记住密码<br/>
+			<form class="form">	
+				<a href="registeForm"><button type="button" id="register-button">注册</button></a>
+			</div>
 		</div>
 	</div>
 </div>

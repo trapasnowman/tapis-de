@@ -32,6 +32,7 @@ public class UserServiceImpl implements UserService {
 	public User login(String loginname, String password) {
 		return userMapper.findWithLoginnameAndPassword(loginname, password);
 	}
+	
 	/**
 	 * UserServiceImpl接口addUser方法实现
 	 * @see { UserService }
@@ -40,6 +41,13 @@ public class UserServiceImpl implements UserService {
 	public void addUser(User user) {
 		userMapper.save(user);
 		// TODO Auto-generated method stub
-		
+	}
+	
+	/**
+	 *修改密码方法实现
+	 * */
+	@Override
+	public void updatePassword(User user) {
+		userMapper.updatePassword(user);
 	}
 }

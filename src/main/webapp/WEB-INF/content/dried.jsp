@@ -38,6 +38,7 @@
 							<li><a href="dried">干花</a></li>
 							<li><a href="food">美食</a></li>
 							<li><a href="cartForm">购物车</a></li>
+							<li><a href="changepwd">修改密码</a></li>
 						</ul>						
 					</div>
 				</div>

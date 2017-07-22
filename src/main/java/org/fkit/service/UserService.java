@@ -20,4 +20,9 @@ public interface UserService {
 	 * @param User 用户对象
 	 * */
 	void addUser(User user);
+	
+	/**
+	 * 用户更新密码
+	 */
+	void updatePassword(User user);
 }
