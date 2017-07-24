@@ -1,6 +1,7 @@
 package org.fkit.domain;
 
 import java.io.Serializable;
+
 import java.util.List;
 
 /**
@@ -28,8 +29,8 @@ public class Cart implements Serializable{
 	private Integer count;	// 数量
 	private Integer good_price;		// 单价
 	private Integer sum_price;		// 总价
-	private Integer good_picture;		// 总价
-	private Integer good_good_name;		// 总价
+	private String good_picture;		// 总价
+	private String good_good_name;		// 总价
 	public Integer getId() {
 		return id;
 	}
@@ -54,13 +55,17 @@ public class Cart implements Serializable{
 	public void setSum_price(Integer sum_price) {
 		this.sum_price = sum_price;
 	}
-
-	@Override
-	public String toString() {
-		return "Cart [id=" + id + ", good=" + good + ",loginname=" + loginname + ", good_id="
-				+ good_id + ", count=" + count + ", good_price=" + good_price
-				+ ",sum_price=" + sum_price +", good_picture=" + good_picture
-				+ ", good_good_name=" + good_good_name+ "]";
+	public String getGood_picture() {
+		return good_picture;
+	}
+	public void setGood_picture(String good_picture) {
+		this.good_picture = good_picture;
+	}
+	public String getGood_good_name() {
+		return good_good_name;
+	}
+	public void setgGood_good_name(String good_good_name) {
+		this.good_good_name = good_good_name;
 	}
 	public Integer getGood_id() {
 		return good_id;
@@ -74,16 +79,11 @@ public class Cart implements Serializable{
 	public void setGood_price(Integer good_price) {
 		this.good_price = good_price;
 	}
-	public Integer getGood_picture() {
-		return good_picture;
-	}
-	public void setGood_picture(Integer good_picture) {
-		this.good_picture = good_picture;
-	}
-	public Integer getGood_good_name() {
-		return good_good_name;
-	}
-	public void setGood_good_name(Integer good_good_name) {
-		this.good_good_name = good_good_name;
+	@Override
+	public String toString() {
+		return "Cart [id=" + id + ", good=" + good + ",loginname=" + loginname + ", good_id="
+				+ good_id + ", count=" + count + ", good_price=" + good_price
+				+ ",sum_price=" + sum_price +", good_picture=" + good_picture
+				+ ", good_good_name=" + good_good_name+ "]";
 	}
 }

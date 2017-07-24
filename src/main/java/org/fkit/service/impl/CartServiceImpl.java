@@ -2,6 +2,7 @@ package org.fkit.service.impl;
 
 import java.util.List;
 
+
 import javax.management.RuntimeErrorException;
 
 import org.fkit.mapper.CartMapper;
@@ -28,7 +29,7 @@ public class CartServiceImpl implements CartService{
 	@Override
 	public Cart findCart(int good_id) {
 		// TODO Auto-generated method stub
-		return CartMapper.findWithGood_id(good_id);
+		return CartMapper.findWithId(good_id);
 	}
 
 	@Override
@@ -44,7 +45,7 @@ public class CartServiceImpl implements CartService{
 	@Override
 	public Cart addCart(int good_id) {
 		// TODO Auto-generated method stub
-		Cart cart = CartMapper.findWithGood_id(good_id);
+		Cart cart = CartMapper.findWithId(good_id);
 		CartMapper.addCart(cart);
 		return cart;
 	}
@@ -53,7 +54,7 @@ public class CartServiceImpl implements CartService{
 	public Cart reduceCart(int good_id) {
 		// TODO Auto-generated method stub
 		
-				Cart Cart = CartMapper.findWithGood_id(good_id);
+				Cart Cart = CartMapper.findWithId(good_id);
 				if (Cart.getCount() >= 1) {
 					CartMapper.reduceCart(Cart);
 				} else {
@@ -66,7 +67,7 @@ public class CartServiceImpl implements CartService{
 	public Cart increaseCart(int good_id) {
 		// TODO Auto-generated method stub
 		
-				Cart cart = CartMapper.findWithGood_id(good_id);
+				Cart cart = CartMapper.findWithId(good_id);
 				if (cart.getCount() >= 1) {
 					CartMapper.increaseCart(cart);
 				} else {
@@ -80,7 +81,7 @@ public class CartServiceImpl implements CartService{
 	@Override
 	public Cart removeCart(int good_id) {
 		// TODO Auto-generated method stub
-		Cart cart = CartMapper.findWithGood_id(good_id);
+		Cart cart = CartMapper.findWithId(good_id);
 		CartMapper.removeCart(cart);
 		return cart;
 	}

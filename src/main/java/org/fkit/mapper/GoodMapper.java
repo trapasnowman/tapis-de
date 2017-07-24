@@ -53,7 +53,7 @@ public interface GoodMapper {
 	Good findWithId(@Param("id") Integer id);
 	
 	@Select("select * from good where id=#{id}")
-    @Results({@Result(id = true,column="id",property="id"),@Result(column="id",property="id"),
+    @Results({@Result(id = true,column="id",property="id"),@Result(column="good_sn",property="good_sn"),
     @Result(column="good_name",property="good_name"),@Result(column="price",property="price"),
     @Result(column="picture",property="picture"),@Result(column="count",property="count")})
     List<Good> selectByGoodId(int id);

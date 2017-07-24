@@ -93,7 +93,7 @@
 							<h3>${good.good_name }</h3>
 							<p>¥ ${good.price }<a href="#">有一个超链接</a></p>
 							<div class="det_nav">
-								<h4>描述:${good.material }</h4>
+								<h4>材料:${good.material }</h4>
 								<h4>包装 :${good.packing }</h4>
 							</div>
 							<div class="btn_form">

@@ -49,9 +49,9 @@
 
                                             <td class="product-quantity">
                                                 <div class="quantity buttons_added">
-                                                    <a  href="reduce?good_id=${good.good_sn}" class="minus" >-</a>
+                                                    <a  href="reduce?good_id=${good.id}" class="minus" >-</a>
                                                     ${cart.count}
-                                                    <a  href="increase?good_id=${good.good_sn}"  class="plus" >+</a>
+                                                    <a  href="increase?good_id=${good.id}"  class="plus" >+</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -61,8 +61,9 @@
                                             </td>
                                         </tr>
                                     </tbody>
-                            </c:forEach>
-                       </c:forEach>	
+                       		</c:forEach>
+                       	</c:forEach>	     
+                       	
                                 </table>
                             </form>
                      </div>

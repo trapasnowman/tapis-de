@@ -2,6 +2,7 @@ package org.fkit.mapper;
 
 import java.util.List;
 
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Many;
@@ -27,7 +28,7 @@ public interface CartMapper {
 	@Results({ @Result(id = true, column = "id", property = "id"),
 			@Result(column = "good_id", property = "good", many = @Many(select = "org.fkit.mapper.GoodMapper.selectByGoodId", fetchType = FetchType.LAZY)),				
 			@Result(column = "count", property = "count"), @Result(column = "good_id", property = "good_id") })
-   Cart findWithGood_id(@Param("good_id") int good_id);
+   Cart findWithId(@Param("good_id") int good_id);
    
     //加入购物车
     @Insert("insert into cart(good_id,count) values(#{good_id},#{count})")
