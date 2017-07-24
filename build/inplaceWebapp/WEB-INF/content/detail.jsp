@@ -97,7 +97,12 @@
 								<h4>包装 :${good.packing }</h4>
 							</div>
 							<div class="btn_form">
-								<a href="cartForm">加入购物车</a><a href="cartForm">加入收藏</a>
+								<form action="save" method="post">
+									<input type="hidden" name="good_id" id="good_id" value="${good.id }">
+									<input type="hidden" name="good_good_name" id="good_good_name" value="${good.good_name}">
+									<input type="hidden" name="good_picture" id="good_picture" value="${good.picture}">
+									<a href="save?good_id=${good.id}" role="submit">加入购物车</a> <a href="cartForm">加入收藏</a>
+								</form>
 							</div>							
 							<div class="det_nav">
 								<h4>看看其他 :</h4>
@@ -121,6 +126,5 @@
 		</div>
 	</div>
 	<!-- content end -->		
-<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
 </html>

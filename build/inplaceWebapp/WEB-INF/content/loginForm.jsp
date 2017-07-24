@@ -14,20 +14,22 @@
 	<div class="wrapper">
 		<div class="container">
 			<h1>Welcome</h1>			
-			<form class="form" action="login" method="post">
-				<input type="text" placeholder="用户名" name=loginname>
-				<input type="password" placeholder="密码" name=password>
-				<button type="submit" id="login-button">登录</button>
+			<form class="form" action="login" method="post" id="loginForm">
+				<input type="text" placeholder="用户名" name=loginname id="loginname">
+				<input type="password" placeholder="密码" name=password id="password">
+				<button type="submit" id="login-button" onclick="Save()">登录</button>
 			</form>
-				<a href="forgetpwd">忘记密码</a>&nbsp&nbsp<input type="checkbox" value="记住密码">记住密码<br/>
+				<a href="forgetpwd">忘记密码</a>&nbsp&nbsp<input type="checkbox" value="记住密码" id="remember" name="remember"/>记住密码<br/>
 			<form class="form">	
 				<a href="registeForm"><button type="button" id="register-button">注册</button></a>
-			</div>
+			</form>
 		</div>
 	</div>
 </div>
 <div class="headfont">
 <h1>Tapis De Fleurs 繁花似锦</h1>
 </div>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/rememberpwd.js"></script>
 </body>
 </html>

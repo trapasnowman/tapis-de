@@ -10,6 +10,12 @@ import org.fkit.domain.Good;
 public interface GoodService {
 	
 	/**
+	 * find all goods
+	 * @return good对象集合
+	 * */
+	List<Good> getAll();
+	
+	/**
 	 * 查找所有鲜花
 	 * @return fresh对象集合
 	 * */

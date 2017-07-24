@@ -2,18 +2,14 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Tapis.com</title>
-    <!-- load stylesheets -->  
-    <link rel="stylesheet" href="css/bootstrap.min.css">                                    
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">                              
-    <link rel="stylesheet" href="css/style.css">                                 
-
-</head>
+	<head>
+	    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Tapis.com</title>
+	    <!-- load stylesheets -->  
+	    <link rel="stylesheet" href="css/bootstrap.min.css">                                    
+	    <link rel="stylesheet" href="css/bootstrap-theme.min.css">                              
+	    <link rel="stylesheet" href="css/style.css">                                 
+	</head>
     <body>        
         <div class="container">
             <div class="row">
@@ -59,16 +55,11 @@
                                 <header>
                                     <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Welcome to Tapis De Fleurs</h2>
                                 </header>
-                                <p>我听见回声，来自山谷和心间
-以寂寞的镰刀收割空旷的灵魂
-不断地重复决绝，又重复幸福
-终有绿洲摇曳在沙漠
-我相信自己
-生来如同璀璨的夏日之花
-不凋不败，妖冶如火
-承受心跳的负荷和呼吸的累赘
-乐此不疲   --泰戈尔《生如夏花》
-</p>
+                                <p>我听见回声，来自山谷和心间 </p>
+								<p>以寂寞的镰刀收割空旷的灵魂 不断地重复决绝，又重复幸福</p>
+								<p>终有绿洲摇曳在沙漠 我相信自己 生来如同璀璨的夏日之花 </P>
+								<p>不凋不败，妖冶如火 承受心跳的负荷和呼吸的累赘 乐此不疲 </p>
+								<p>--泰戈尔《生如夏花》</p>         
                             </section>
                             <!-- About section -->
                             <section id="about" class="tm-section">
@@ -82,7 +73,6 @@
                                         <p>对美食和美好的向往，对新鲜和健康的追求，精心设计，用心制作。将您的心意融化在舌尖的那一抹香醇。</p>
                                         <a href="#" class="tm-button tm-button-wide">Read More</a>  
                                     </div>
-
                                     <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 pull-lg-8 pull-md-7 tm-about-img-container">
                                         <img src="image/tapis-02.jpg" alt="Image" class="img-fluid">    
                                     </div>  
@@ -162,41 +152,7 @@
         <!-- load JS files -->
         <script src="js/bootstrap.min.js"></script>           
         <script src="js/scripts.js"></script>    
-        <script src="js/jquery.min.js"></script>      
-        <script>     
-       
-            $(document).ready(function(){
-
-                // Single page nav
-                $('.tm-main-nav').singlePageNav({
-                    'currentClass' : "active",
-                    offset : 20
-                });
-
-                // Magnific pop up
-                $('.tm-gallery-1').magnificPopup({
-                  delegate: 'a', // child items selector, by clicking on it popup will open
-                  type: 'image',
-                  gallery: {enabled:true}
-                  // other options
-                }); 
-
-                $('.tm-gallery-2').magnificPopup({
-                  delegate: 'a', // child items selector, by clicking on it popup will open
-                  type: 'image',
-                  gallery: {enabled:true}
-                  // other options
-                }); 
-
-                $('.tm-gallery-3').magnificPopup({
-                  delegate: 'a', // child items selector, by clicking on it popup will open
-                  type: 'image',
-                  gallery: {enabled:true}
-                  // other options
-                }); 
-
-                $('.tm-current-year').text(new Date().getFullYear());                
-            });
-        </script>             
+        <script src="js/jquery.min.js"></script>              
+        <script type="js/index.js"></script>
 </body>
 </html>

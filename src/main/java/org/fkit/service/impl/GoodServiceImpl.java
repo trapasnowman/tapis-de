@@ -26,6 +26,17 @@ public class GoodServiceImpl implements GoodService {
 	private GoodMapper goodMapper;
 
 	/**
+	 * GoodService  impl getAll method
+	 * @see { GoodService }
+	 * */
+	@Transactional(readOnly=true)
+	@Override
+	public List<Good> getAll() {
+		
+		return goodMapper.findAll();
+	}
+	
+	/**
 	 * GoodService接口getAllfresh方法实现
 	 * @see { GoodService }
 	 * */

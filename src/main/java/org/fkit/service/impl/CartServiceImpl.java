@@ -26,34 +26,34 @@ public class CartServiceImpl implements CartService{
 	}
 	
 	@Override
-	public Cart findCart(int good_sn) {
+	public Cart findCart(int good_id) {
 		// TODO Auto-generated method stub
-		return CartMapper.findWithId(good_sn);
+		return CartMapper.findWithGood_id(good_id);
 	}
 
 	@Override
-	public Cart saveCart(int good_sn) {
+	public Cart saveCart(int good_id) {
 		// TODO Auto-generated method stub
 		Cart cart = new Cart();
-		cart.setGood_sn(good_sn);
+		cart.setGood_id(good_id);
 		final int i = 1;
 		cart.setCount(i);
 		CartMapper.saveCart(cart);
 		return cart;
 	}
 	@Override
-	public Cart addCart(int good_sn) {
+	public Cart addCart(int good_id) {
 		// TODO Auto-generated method stub
-		Cart cart = CartMapper.findWithId(good_sn);
+		Cart cart = CartMapper.findWithGood_id(good_id);
 		CartMapper.addCart(cart);
 		return cart;
 	}
 
 	@Override
-	public Cart reduceCart(int good_sn) {
+	public Cart reduceCart(int good_id) {
 		// TODO Auto-generated method stub
 		
-				Cart Cart = CartMapper.findWithId(good_sn);
+				Cart Cart = CartMapper.findWithGood_id(good_id);
 				if (Cart.getCount() >= 1) {
 					CartMapper.reduceCart(Cart);
 				} else {
@@ -63,10 +63,10 @@ public class CartServiceImpl implements CartService{
 				return Cart;
 	}
 	@Override
-	public Cart increaseCart(int good_sn) {
+	public Cart increaseCart(int good_id) {
 		// TODO Auto-generated method stub
 		
-				Cart cart = CartMapper.findWithId(good_sn);
+				Cart cart = CartMapper.findWithGood_id(good_id);
 				if (cart.getCount() >= 1) {
 					CartMapper.increaseCart(cart);
 				} else {
@@ -76,16 +76,11 @@ public class CartServiceImpl implements CartService{
 				return cart;
 	}
 
-	@Override
-	public void clearCart() {
-		// TODO Auto-generated method stub
-		CartMapper.clearCart();
-	}
 
 	@Override
-	public Cart removeCart(int good_sn) {
+	public Cart removeCart(int good_id) {
 		// TODO Auto-generated method stub
-		Cart cart = CartMapper.findWithId(good_sn);
+		Cart cart = CartMapper.findWithGood_id(good_id);
 		CartMapper.removeCart(cart);
 		return cart;
 	}

@@ -21,8 +21,8 @@ public class CartController {
 	@Qualifier("cartService")
 	private CartService cartService;
 	
-	@RequestMapping(value = "/show_cart")
-	public String show_cart(Model model) {
+	@RequestMapping(value = "/cart")
+	public String cart(Model model) {
 		
 		// 获得所有物品集合
 		List<Cart> cart_list = cartService.getAll();
@@ -35,13 +35,13 @@ public class CartController {
 	
 	@RequestMapping(value = "/save")
 	public String save(HttpServletRequest request,Model model) {
-		String good_sn = request.getParameter("good_sn");
-		int good_sn_ = Integer.parseInt(good_sn);
-		Cart cart=cartService.findCart(good_sn_);
+		String good_id = request.getParameter("good_id");
+		int good_id_ = Integer.parseInt(good_id);
+		Cart cart=cartService.findCart(good_id_);
 		if (cart == null) {
-			cartService.saveCart(good_sn_);
+			cartService.saveCart(good_id_);
 		}else {			
-			cartService.addCart(good_sn_);	
+			cartService.addCart(good_id_);	
 		}
 		List<Cart> cart_list = cartService.getAll();
 		// 将物品集合添加到model当中
@@ -49,23 +49,13 @@ public class CartController {
 		// 跳转到cartForm页面
 		return "cartForm";
 	}
-	//清空购物车
-	@RequestMapping(value = "/clear")
-	public String clear(Model model) {
-		cartService.clearCart();
-		List<Cart> cart_list = cartService.getAll();
-		// 将物品集合添加到model当中
-		model.addAttribute("cart_list", cart_list);
-		// 跳转到cartForm页面
-		return "cartForm";
-
-	}
+	
 	//从购物车里减少数量
 	@RequestMapping(value="/reduce")
 	public String reduce(Model model,HttpServletRequest request){
-		String good_sn = request.getParameter("good_sn");
-		int good_sn_ = Integer.parseInt(good_sn);
-		cartService.reduceCart(good_sn_);
+		String good_id = request.getParameter("good_id");
+		int good_id_ = Integer.parseInt(good_id);
+		cartService.reduceCart(good_id_);
 		List<Cart> cart_list = cartService.getAll();
 		// 将物品集合添加到model当中
 		model.addAttribute("cart_list", cart_list);
@@ -76,9 +66,9 @@ public class CartController {
 	//从购物车里增加数量
 		@RequestMapping(value="/increase")
 		public String increase(Model model,HttpServletRequest request){
-			String good_sn = request.getParameter("good_sn");
-			int good_sn_ = Integer.parseInt(good_sn);
-			cartService.increaseCart(good_sn_);
+			String good_id = request.getParameter("good_id");
+			int good_id_ = Integer.parseInt(good_id);
+			cartService.increaseCart(good_id_);
 			List<Cart> cart_list = cartService.getAll();
 			// 将物品集合添加到model当中
 			model.addAttribute("cart_list", cart_list);
@@ -89,9 +79,9 @@ public class CartController {
 	//取消购物车的东西
 	@RequestMapping(value="/remove")
 	public String remove(Model model,HttpServletRequest request){
-		String good_sn = request.getParameter("good_sn");
-		int good_sn_ = Integer.parseInt(good_sn);
-		cartService.removeCart(good_sn_);
+		String good_id = request.getParameter("good_id");
+		int good_id_ = Integer.parseInt(good_id);
+		cartService.removeCart(good_id_);
 		List<Cart> cart_list = cartService.getAll();
 		// 将物品集合添加到model当中
 		model.addAttribute("cart_list", cart_list);
