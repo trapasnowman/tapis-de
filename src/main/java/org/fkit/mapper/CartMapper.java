@@ -19,7 +19,7 @@ public interface CartMapper {
     
 	@Select("select * from cart")
 	@Results({ @Result(id = true, column = "id", property = "id"),
-		@Result(column = "good_id", property = "good", many = @Many(select = "org.fkit.Mapper.GoodMapper.selectByGoodId", fetchType = FetchType.LAZY)),		
+		@Result(column = "good_id", property = "good", many = @Many(select = "org.fkit.mapper.GoodMapper.selectByGoodId", fetchType = FetchType.LAZY)),		
 		@Result(column = "count", property = "count"),@Result(column = "good_id", property = "good_id")})
 	List<Cart> findAll();
 
@@ -45,7 +45,7 @@ public interface CartMapper {
 	void reduceCart(Cart cart);
     
     //增加购物车商品数量
-    @Update("update cart set count=count+1 where good_id#{good_id}")
+    @Update("update cart set count=count+1 where good_id=#{good_id}")
 	void increaseCart(Cart cart);
     
     //删除商品
